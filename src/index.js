@@ -6,41 +6,24 @@ import './index.css';
 import reportWebVitals from './reportWebVitals'; */
 
 
-const firstBook = {
+const books = [{
   author: 'Laura Nowlin',
   title: 'If Only I Had Told Her',
   image: './images/book-1.jpg',
-};
-
-const secondBook = {
+}, {
   author: 'Steven Carroll',
   title: 'Death of a Foreign Gentleman',
   image: './images/book-2.jpg',
-};
+}
+];
 
 function BookList() {
   return (
     <section className='booklist'>
-      <Book
-        author={firstBook.author}
-        title={firstBook.title}
-        image={firstBook.image}
-      >
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque
-          repudiandae inventore eos qui animi sed iusto alias eius ea sapiente.
-        </p>
-        <button>click me</button>
-      </Book>
-      <Book
-        author = {secondBook.author}
-        title = {secondBook.title}
-        image = {secondBook.image}
-      />
-      {/* <Book />
-      <Book />
-      <Book />
-      <Book /> */}
+      {books.map((book) => {
+        const {image, title, author} = book;
+        return <Book image = {image} title = {title} author = {author}/>;
+      })}
     </section>
   );
 }
