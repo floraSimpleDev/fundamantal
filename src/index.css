@@ -56,3 +56,7 @@ code {
   margin-top: 0.5rem;
   letter-spacing: .125rem;
 }
+
+.book p {
+  margin: 1rem 0 0.5rem;
+}
