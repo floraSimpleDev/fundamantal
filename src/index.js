@@ -10,10 +10,12 @@ const books = [{
   author: 'Laura Nowlin',
   title: 'If Only I Had Told Her',
   image: './images/book-1.jpg',
+  id: 1,
 }, {
   author: 'Steven Carroll',
   title: 'Death of a Foreign Gentleman',
   image: './images/book-2.jpg',
+  id: 2,
 }
 ];
 
@@ -21,15 +23,15 @@ function BookList() {
   return (
     <section className='booklist'>
       {books.map((book) => {
-        const {image, title, author} = book;
-        return <Book book = {book}/>;
+        /* const {image, title, author} = book; */
+        return <Book {...book} key = {book.id}/>;
       })}
     </section>
   );
 }
 
 const Book = (props) => {
-  const { image, title, author } = props.book;
+  const { image, title, author } = props;
   console.log(props);
   return (
     <article className='book'>
