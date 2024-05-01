@@ -22,14 +22,14 @@ function BookList() {
     <section className='booklist'>
       {books.map((book) => {
         const {image, title, author} = book;
-        return <Book image = {image} title = {title} author = {author}/>;
+        return <Book book = {book}/>;
       })}
     </section>
   );
 }
 
 const Book = (props) => {
-  const { image, title, author, children } = props;
+  const { image, title, author } = props.book;
   console.log(props);
   return (
     <article className='book'>
