@@ -36,16 +36,16 @@ function BookList() {
 
 const Book = (props) => {
   const { image, title, author, getBook, id} = props;
-  const getSingleBook = () => {
+  /* const getSingleBook = () => {
     getBook(id);
-  }
+  } */
   //console.log(props);
   return (
     <article className='book'>
       <img src= {image} alt= {title} />
       <h2>{title}</h2>
       <h4>{author}</h4>
-      <button onClick={getSingleBook}>display title</button>
+      <button onClick={() => {getBook(id)}}>display title</button>
       {/* {children} */}
     </article>
   );
