@@ -1,23 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import {books} from './books.js'
 /* import './images/book-1.jpg'; */
 /* import App from './App';
 import reportWebVitals from './reportWebVitals'; */
 
-
-const books = [{
-  author: 'Laura Nowlin',
-  title: 'If Only I Had Told Her',
-  image: './images/book-1.jpg',
-  id: 1,
-}, {
-  author: 'Steven Carroll',
-  title: 'Death of a Foreign Gentleman',
-  image: './images/book-2.jpg',
-  id: 2,
-}
-];
 
 function BookList() {
   const getBook = (id) => {
@@ -25,12 +13,15 @@ function BookList() {
     console.log(book);
   }
   return (
+    <>
+    <h1>amazon best sellers</h1>
     <section className='booklist'>
       {books.map((book) => {
         /* const {image, title, author} = book; */
         return <Book {...book} key = {book.id} getBook = {getBook} />;
       })}
     </section>
+    </>
   );
 }
 
@@ -45,7 +36,7 @@ const Book = (props) => {
       <img src= {image} alt= {title} />
       <h2>{title}</h2>
       <h4>{author}</h4>
-      <button onClick={() => {getBook(id)}}>display title</button>
+      <span className='number'>{`# ${id}`}</span>
       {/* {children} */}
     </article>
   );
